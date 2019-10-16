@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Log In</title>
+		<link rel="stylesheet" type="text/css" href="nav_bar.css">
+		<link rel="stylesheet" type="text/css" href="Log_in.css">
+	</head>
+	<body>
+		<nav>
+			<img id="logo" src="images/logo3.png" alt="something went wrong">
+			<div class="content">
+				<ul id="navbar">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="About_us.html">About Us</a></li>
+					<li><a href="Contact_us.html">Contact us</a></li>
+					<li><a href="Log_in.html">Log In</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="sign-in">
+			<form>
+				<h2 style="color: white;">Log In</h2>
+				<input type="text" name="username" placeholder="username" id="username">
+				<input type="password" name="pass" placeholder="password" id="password"><br><br>
+				<a href="#" onclick="login()"><input type="button" value="Log In" id="submit-btn"></a><br><br>
+				<div class="container">
+					<a href="re.html" style="margin-left: 0px; font-size: 13px; font-family: sans-serif,Tahoma">Reset Password</a>
+					<a href="for.html" style="margin-left: 35px; font-size: 13px; font-family: sans-serif,Tahoma">Forgot Password</a>
+				</div><br><br><br><br id="username"><br><br>
+						<div style="padding-left: 10px;">Don't have a account?<a hr id="password"ef="sign-up.html">Sign Up</a></div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			function login(){
+			var x=document.getElementById('username').value;
+			var y=document.getElementById('password').value;
+			var z=false;
+			for(var i=1805081;i<=18050138;i++){
+				if (x=='gauravagarwal091@gmail.com' && y=='12112002') {
+				alert('welcome admin')
+				window.location='admin.html';
+				z=true;
+				break;
+			}
+			if(x==i && y==('dei'+i)){
+					alert('welcome '+i);
+					z=true;
+					window.location='user.html';
+					break;
+				}
+			}
+			if(z==false){
+				alert('wrong details Try again');
+			}
+		}
+		</script>
+	</body>
+</html>
