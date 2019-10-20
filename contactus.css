@@ -93,8 +93,9 @@ body,button,input{
 	background-color: #ea1d6f;
 }
 .app-contact{
+	width: 250px;
 	margin-top: auto;
-	font-size: 11px;
+	font-size: 12px;
 	color: #888;
 }
 .app-form-group{
@@ -107,7 +108,7 @@ body,button,input{
 	margin-bottom: 0px;
 	text-align: right;
 }
-.app-form-control,#input1{
+.app-form-control{
 	border:none;
 	width: 100%;
 	padding: 10px 0;
@@ -115,9 +116,7 @@ body,button,input{
 	border-bottom: 1px solid #666;
 	background-color: #ddd;
 	font-size: 14px;
-	text-transform: uppercase;
 	outline: none;
-	transition: border-color 0.2s;
 }
 .app-form-control::placeholder{color: #666;}
 .app-form-control:focus{border-bottom-color: #ddd;}
@@ -130,3 +129,25 @@ body,button,input{
 	outline: none;
 }
 .app-form-button:hover{color: #b9134f;}
+input{
+	border-radius: 10px;
+	text-align: center;
+}
+input::placeholder{text-align: center;}
+#message{
+	border-radius: 10px;
+	padding: 10px 0;
+	background-color: transparent;
+	background-color: #ddd;
+	font-size: 14px;
+	background-color: #ddd;
+	text-align: center;
+}
+#message::placeholder{
+	color: #666;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	letter-spacing: 1px;
+	padding-top: 25px;
+	}

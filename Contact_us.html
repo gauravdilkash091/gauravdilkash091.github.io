@@ -4,6 +4,43 @@
 		<title>Contact Us</title>
 		<link rel="stylesheet" type="text/css" href="nav_bar.css">
 		<link rel="stylesheet" type="text/css" href="contactus.css">
+		<style type="text/css">
+		#msg{
+			visibility: hidden;
+			background-color: yellow;
+			min-width: 250px;
+			color: #000;
+			text-align: center;
+			border-radius: 2px;
+			padding: 16px;
+			position: fixed;
+			z-index: 1;
+			right: 30%;
+			top: 60px;
+			font-size: 17px;
+			margin-right:80px;
+		}
+		#msg.show{
+			visibility: visible;
+			-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+		}
+		@-webkit-keyframes fadein{
+			from {top: 0; opacity: 0;}
+			to {top: 60px; opacity: 1;}
+		}
+		@keyframes fadein{
+		from {top: 0; opacity: 0;}
+		to {top: 60px; opacity: 1;}	
+		}
+		@-webkit-keyframes fadeout{
+			from {top: 60px; opacity: 1;}
+			to {top: 0; opacity: 0;}	
+		}
+		@keyframes fadeout{
+		from {top: 60px; opacity: 1;}
+			to {top: 0; opacity: 0;}	
+		}
+	</style>
 	</head>
 	<body>
 		<nav>
@@ -38,7 +75,7 @@
 								<span>CONTACT</span>
 								<span>US</span>
 							</div>
-							<div class="app-contact">CONTACT INFO : +91 8077180385</div>
+							<div class="app-contact">CONTACT INFO : +91 8077180385<br>MAIL : gauravagarwal091@gmail.com</div>
 						</div>
 						<div class="screen-body-item">
 							<div class="app-form">
@@ -52,17 +89,44 @@
 									<input id="input1" class="app-form-control" type="text" name="contact" placeholder="CONTACT NO">
 								</div>
 								<div class="app-form-group message">
-									<input class="app-form-control" type="text" name="message" placeholder="MESSAGE">
+									<textarea id="message"  rows ="5" cols="5" class="app-form-control" name="message" placeholder="MESSAGE"></textarea>
 								</div>
 								<div class="app-form-group buttons">
-									<button class="app-form-button">CANCEL</button>
-									<button class="app-form-button">SEND</button>
+									<button class="app-form-button" onclick="cancel()">CANCEL</button>
+									<button class="app-form-button" onclick='myfunction()'>SEND</button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div id="msg">Thank you for contacting us!!!</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			var x=document.getElementsByClassName('app-form-control');
+			var check=true;
+			function myfunction(){
+				for(var i=0;i<x.length;i++){
+					if(x[i].value==''){
+						alert('please fill all the details...');
+						check=false;
+						break;
+					}
+				}
+				if(check==true){
+						var z=document.getElementById("msg");
+			z.className="show";
+			setTimeout(function(){z.className=z.className.replace("show","");},3000);
+						for(var j=0;j<x.length;j++){
+							x[j].value='';
+						}
+					}
+			}
+			function cancel(){
+				for(var j=0;j<x.length;j++){
+					x[j].value='';
+				}
+			}
+		</script>
 	</body>
 </html>

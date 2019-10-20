@@ -49,7 +49,7 @@
 				<ul id="navbar">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="About_us.html">About Us</a></li>
-					<li><a href="#">Contact us</a></li>
+					<li><a href="contact_us.html">Contact us</a></li>
 					<li><a href="Log_in.html">Log In</a></li>
 				</ul>
 			</div>
@@ -66,12 +66,15 @@
 	</div>
 	<script type="text/javascript">
 		function myfunction(){
-			var x=document.getElementById("msg");
+			var y=document.getElementsByClassName("sign");
+			if(y[0].value==''){
+				alert('Please enter your email...');
+			}
+			else{
+				var x=document.getElementById("msg");
 			x.className="show";
 			setTimeout(function(){x.className=x.className.replace("show","");},3000);
-			var y=document.getElementsByClassName("sign");
-			for(var i=0;i<y.length;i++){
-				y[i].value="";
+				y[0].value='';
 			}
 		}
 	</script>

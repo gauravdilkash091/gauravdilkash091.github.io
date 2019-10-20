@@ -42,7 +42,9 @@ h1{
 }
 .main-content h2{text-align: center;padding-top: 30px;}
 .main-content p{padding:50px 50px;}
-.main-content img{padding-left: 30%;}
+.main-content img{
+	padding-left: 30%;
+}
 .main-content ol{padding:50px;}
 .main-content ul li .list-heading{
 	padding: 15px 0;

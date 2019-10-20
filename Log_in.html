@@ -20,14 +20,14 @@
 		<div class="sign-in">
 			<form>
 				<h2 style="color: white;">Log In</h2>
-				<input type="text" name="username" placeholder="username" id="username">
-				<input type="password" name="pass" placeholder="password" id="password"><br><br>
+				<input type="text" name="username" placeholder="Username" id="username">
+				<input type="password" name="pass" placeholder="Password" id="password"><br><br>
 				<a href="#" onclick="login()"><input type="button" value="Log In" id="submit-btn"></a><br><br>
 				<div class="container">
 					<a href="re.html" style="margin-left: 0px; font-size: 13px; font-family: sans-serif,Tahoma">Reset Password</a>
 					<a href="for.html" style="margin-left: 35px; font-size: 13px; font-family: sans-serif,Tahoma">Forgot Password</a>
 				</div><br><br><br><br id="username"><br><br>
-						<div style="padding-left: 10px;">Don't have a account?<a hr id="password"ef="sign-up.html">Sign Up</a></div>
+						<div style="padding-left: 10px;">Don't have a account?<a href="sign-up.html" id="password">Sign Up</a></div>
 			</form>
 		</div>
 		<script type="text/javascript">
@@ -39,11 +39,31 @@
 				if (x=='gauravagarwal091@gmail.com' && y=='12112002') {
 				alert('welcome admin')
 				window.location='admin.html';
+				x='';
+				y='';
+				z=true;
+				break;
+			}
+			if (x=='shanggautam' && y=='1705969') {
+				alert('welcome admin')
+				window.location='admin.html';
+				x='';
+				y='';
+				z=true;
+				break;
+			}
+			if (x=='yuv.jadaun.2409' && y=='1805132') {
+				alert('welcome admin')
+				window.location='admin.html';
+				x='';
+				y='';
 				z=true;
 				break;
 			}
 			if(x==i && y==('dei'+i)){
 					alert('welcome '+i);
+					x='';
+					y='';
 					z=true;
 					window.location='user.html';
 					break;
