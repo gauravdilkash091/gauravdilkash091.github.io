@@ -6,6 +6,9 @@ body{
 	background-color: #81c644;
 	font-family: 'josefin sans',sans-serif;
 }
+nav{
+	margin-top: -7%;
+}
 .wrapper{
 	margin-top: 7%;
 }

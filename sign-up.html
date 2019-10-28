@@ -49,7 +49,7 @@
 		<ul id="navbar">
 		<li><a href="index.html">Home</a></li>	
 		<li><a href="About_us.html">About Us</a></li>
-		<li><a href="#">Contact us</a></li>
+		<li><a href="Contact_us.html">Contact us</a></li>
 		<li><a href="Log_in.html">Log In</a></li>
 		</ul>
 	</div>
@@ -57,11 +57,11 @@
 	<div class="sign-up">
 		<form>
 			<h2 style="color: #fff;">Sign Up</h2>
-			<input type="text" name="username" placeholder="First name" class="sign"><br><br>
-			<input type="text" name="username" placeholder="Last name" class="sign"><br><br>
-			<input type="password" name="pass" placeholder="Password" class="sign"><br><br>
-			<input type="password" name="pass" placeholder="Confirm Password" class="sign"><br><br>
-			<input type="email" name="email" placeholder="Email address" class="sign"><br><br>
+			<input type="text" name="username" placeholder="First name" class="sign" required><br><br>
+			<input type="text" name="username" placeholder="Last name" class="sign" required><br><br>
+			<input type="password" name="pass" placeholder="Password" class="sign" required><br><br>
+			<input type="password" name="pass" placeholder="Confirm Password" class="sign" required><br><br>
+			<input type="email" name="email" placeholder="Email address" class="sign" required><br><br>
 			<input type="button" value="Sign Up" onclick="myfunction()"><br><br>
 			<div id="msg">Congratulations you have sign up successfully!!!</div>
 		</form>
@@ -72,11 +72,15 @@
 			var y=document.getElementsByClassName("sign");
 			var check=true;
 			for(var i=0;i<y.length;i++){
-				if(y[i].value==''){
-					alert('Please enter all the details...');
+				if(!y[i].checkValidity()){
+					alert(y[i].validationMessage);
 					check=false;
 					break;
 				}
+			}
+			if(y[2].value!=y[3].value){
+				alert('both password should be same');
+				check=false;
 			}
 			if(check==true){
 					var x=document.getElementById("msg");

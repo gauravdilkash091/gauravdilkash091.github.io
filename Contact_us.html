@@ -30,17 +30,17 @@
 		}
 		@keyframes fadein{
 		from {top: 0; opacity: 0;}
-		to {top: 60px; opacity: 1;}	
+			to {top: 60px; opacity: 1;}
 		}
 		@-webkit-keyframes fadeout{
 			from {top: 60px; opacity: 1;}
-			to {top: 0; opacity: 0;}	
+				to {top: 0; opacity: 0;}
 		}
 		@keyframes fadeout{
 		from {top: 60px; opacity: 1;}
-			to {top: 0; opacity: 0;}	
+				to {top: 0; opacity: 0;}
 		}
-	</style>
+		</style>
 	</head>
 	<body>
 		<nav>
@@ -80,16 +80,16 @@
 						<div class="screen-body-item">
 							<div class="app-form">
 								<div class="app-form-group">
-									<input class="app-form-control" type="text" name="name" placeholder="NAME">
+									<input class="app-form-control" type="text" name="name" placeholder="NAME" required>
 								</div>
 								<div class="app-form-group">
-									<input class="app-form-control" type="email" name="email" placeholder="EMAIL">
+									<input class="app-form-control" type="email" name="email" placeholder="EMAIL" required>
 								</div>
 								<div class="app-form-group">
-									<input id="input1" class="app-form-control" type="text" name="contact" placeholder="CONTACT NO">
+									<input id="input1" class="app-form-control" type="number" name="contact" placeholder="CONTACT NO" min="1000000000" max='9999999999' required>
 								</div>
 								<div class="app-form-group message">
-									<textarea id="message"  rows ="5" cols="5" class="app-form-control" name="message" placeholder="MESSAGE"></textarea>
+									<textarea id="message"  rows ="5" cols="5" class="app-form-control" name="message" placeholder="MESSAGE" required></textarea>
 								</div>
 								<div class="app-form-group buttons">
 									<button class="app-form-button" onclick="cancel()">CANCEL</button>
@@ -106,11 +106,19 @@
 			var x=document.getElementsByClassName('app-form-control');
 			var check=true;
 			function myfunction(){
+				check=true;
 				for(var i=0;i<x.length;i++){
-					if(x[i].value==''){
-						alert('please fill all the details...');
-						check=false;
-						break;
+					if(!x[i].checkValidity()){
+						if(i==2){
+							alert('please enter a valid contact no');
+							check=false;
+							break;
+						}
+						else{
+							alert(x[i].validationMessage);
+							check=false;
+							break;
+						}
 					}
 				}
 				if(check==true){

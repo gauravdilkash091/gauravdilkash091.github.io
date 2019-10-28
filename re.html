@@ -74,6 +74,10 @@
 					break;
 				}
 			}
+			if(y[1].value!=y[2].value){
+				alert('both password should be same');
+				check=false;
+			}
 			if(check==true){
 				var x=document.getElementById("msg");
 			x.className="show";

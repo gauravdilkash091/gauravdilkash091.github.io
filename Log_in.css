@@ -7,13 +7,17 @@ body{
 	color: #fff;
 	background: url('images/4.jpeg');
 	background-size: cover;
+	position: ;
+}
+nav{
+	margin-top: -150px;
 }
 .sign-in{
 	background: rgba(44, 62, 80, 0.7);
 	padding: 40px;
 	width: 320px;
 	margin: auto;
-	margin-top: 80px;
+	margin-top: 150px;
 	height: 400px;
 }
 input{
@@ -53,7 +57,7 @@ h2{
 	padding-bottom: 15px;
 	letter-spacing: 1px;
 }
-a{
+.sign-in a{
 	color: yellow;
 	text-decoration: blink;
 }

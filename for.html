@@ -58,7 +58,7 @@
 		<form>
 			<h2 style="text-align: center; color: #fff;">Forget Password</h2>
 			<h5 style="font-size: 14px; color: yellow;">Enter email here that you used on your account.We will send a link on your email to reset your password.</h5>
-			<input type="email" name="email" placeholder="enter your email" class="sign"><br><br>
+			<input type="email" name="email" placeholder="enter your email" class="sign" required><br><br>
 			<input type="button" value="send" onclick="myfunction()"><br><br>
 			<a href="Log_in.html" style="text-decoration: none;">Go back to Log In page</a><br><br>
 			<div id="msg">Link send on your email successfully!!!</div>
@@ -67,8 +67,8 @@
 	<script type="text/javascript">
 		function myfunction(){
 			var y=document.getElementsByClassName("sign");
-			if(y[0].value==''){
-				alert('Please enter your email...');
+			if(!y[0].checkValidity()){
+				alert(y[0].validationMessage);
 			}
 			else{
 				var x=document.getElementById("msg");

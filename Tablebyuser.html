@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table updation</title>
+</head>
+<body>
+	<table border="1" cellpadding="5" cellspacing="5">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Roll no</th>
+			<th>Subject</th>
+			<th>Marks</th>
+		</tr>
+		<tr>
+			<td>Gaurav</td>
+			<td>16</td>
+			<td>1805098</td>
+			<td>Java</td>
+			<td>40</td>
+		</tr>
+		<tr>
+			<td>Gaurav</td>
+			<td>16</td>
+			<td>1805098</td>
+			<td>Java</td>
+			<td>40</td>
+		</tr>
+		<tr>
+			<td>Gaurav</td>
+			<td>16</td>
+			<td>1805098</td>
+			<td>Java</td>
+			<td>40</td>
+		</tr>
+	</table>
+	<input type="text" id='userupdate' onclick="func()">Row:
+	<select name="Row" id="userrow">
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+	</select>
+	Column:
+	<select name="column" id="usercol">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select><br>
+	Click on this button to update the content of the cell:<br>
+	<input type="button" value="click me" onclick="update()">
+	<script type="text/javascript">
+		function update(){
+			var row=document.getElementsByTagName('tr');
+			var rowupdate=document.getElementById('userrow').value;
+			var colupdate=document.getElementById('usercol').value;
+			var str=document.getElementsByTagName('input')[0].value;
+			if(str==''){
+				alert('field cannot be empty');
+				return -1;
+		}
+			row[rowupdate-1].children[colupdate-1].innerHTML=str;
+		}
+		function func(){
+			var row=document.getElementsByTagName('tr');
+			var rowupdate=document.getElementById('userrow').value;
+			var colupdate=document.getElementById('usercol').value;
+			var str=document.getElementsByTagName('input')[0];
+			str.value=row[rowupdate-1].children[colupdate-1].innerHTML;
+			console.log(str.innerHTML);
+		}
+	</script>
+</body>
+</html>
